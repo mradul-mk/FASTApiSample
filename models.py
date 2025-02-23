@@ -7,9 +7,9 @@ class Gender(str, Enum):
     female = "Female"
 
 class Role(str, Enum):
+    student = "Student"
     admin = "admin"
     user = "User"
-    student = "Student"
     teacher = "Teacher"
 
 class User(BaseModel):
@@ -20,3 +20,8 @@ class User(BaseModel):
     roles: List[Role]
     email: str
     phone_Number: str
+
+class UpdateUser(BaseModel):
+    role: Optional[Role]= None
+    email: Optional[str]= None
+    phone_Number: Optional[str]= None
